@@ -8,7 +8,6 @@ import userRouter from './routes/userRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import cartRouter from './routes/cartRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
-import serverless from "serverless-http";
 
 
 //App config
@@ -35,4 +34,4 @@ app.get('/',(req,res)=>{
     res.send('Api Working')
 })
 
-export default serverless(app);
+app.listen(port,()=>console.log(`server started at port ${port}`));
