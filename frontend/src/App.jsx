@@ -8,7 +8,7 @@ import Collection from './pages/Collection'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
 import Orders from './pages/Orders'
-import Placeorder from './pages/Placeorder'
+import PlaceOrder from './pages/PlaceOrder'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path="/place-order" element={<Placeorder />} />
+        <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/verify" element={<Verify />} />
       </Routes>
       <Footer/>

@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 import axios from 'axios'
 import { currency } from '../../../admin/src/App'
 
-const Placeorder = () => {
+const PlaceOrder = () => {
 
     const [method,setMethod] = useState('cod');
     const {navigate,backendUrl,token,cartItems,setCartItems,getCartAmount,delivery_fee,products} = useContext(ShopContext);
@@ -182,4 +182,4 @@ const Placeorder = () => {
   )
 }
 
-export default Placeorder
+export default PlaceOrder
