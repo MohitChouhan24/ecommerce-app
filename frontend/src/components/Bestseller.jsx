@@ -11,7 +11,7 @@ const Bestseller = () => {
         const bestProduct = products.filter((item)=>(item.bestSeller));   
         setBestsellers(bestProduct.slice(0,5));
     },[products])
-  return (
+  return (  
     <div className='my-10'>
         <div className='text-center text-3xl py-8'>
             <Title text1 = {'BEST'} text2 = {'SELLER'}/>
