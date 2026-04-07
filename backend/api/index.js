@@ -2,12 +2,12 @@
 import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
-import connectDB from './config/mongodb.js';
-import connectCloudinary from './config/cloudinary.js';
-import userRouter from './routes/userRoutes.js';
-import productRouter from './routes/productRoutes.js';
-import cartRouter from './routes/cartRoutes.js';
-import orderRouter from './routes/orderRoutes.js';
+import connectDB from '../config/mongodb.js';
+import connectCloudinary from '../config/cloudinary.js';
+import userRouter from '../routes/userRoutes.js';
+import productRouter from '../routes/productRoutes.js';
+import cartRouter from '../routes/cartRoutes.js';
+import orderRouter from '../routes/orderRoutes.js';
 
 
 //App config
@@ -34,4 +34,4 @@ app.get('/',(req,res)=>{
     res.send('Api Working')
 })
 
-app.listen(port,()=>console.log(`server started at port ${port}`));
+export default app;
