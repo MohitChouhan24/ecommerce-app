@@ -22,21 +22,30 @@ connectCloudinary();
 
 //middlewares
 app.use(express.json());
+import cors from "cors";
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://forever-frontend-blond-sigma.vercel.app",
+  "https://forever-admin-nine-roan.vercel.app"
+];
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://forever-frontend-blond-sigma.vercel.app"
-  ],
+  origin: function(origin, callback) {
+    // allow requests with no origin (like Postman)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization", "token"],
   credentials: true
 }));
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://forever-frontend-blond-sigma.vercel.app");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, token");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  next();
-});
+
 
 //api endpoints
 app.use('/api/user',userRouter);
