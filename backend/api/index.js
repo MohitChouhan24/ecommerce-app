@@ -22,7 +22,6 @@ connectCloudinary();
 
 //middlewares
 app.use(express.json());
-import cors from "cors";
 
 const allowedOrigins = [
   "http://localhost:5173",
